@@ -39,17 +39,11 @@ class MainActivity : AppCompatActivity() {
         viewPager.addOnPageChangeListener(object : OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
             }
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
+            override fun onPageScrolled( position: Int,positionOffset: Float,positionOffsetPixels: Int) {
             }
 
             override fun onPageSelected(position: Int) {
                 // Check if this is the page you want.
-
-
             }
         })
 

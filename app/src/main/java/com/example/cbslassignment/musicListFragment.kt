@@ -118,11 +118,11 @@ class musicListFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener {
 
             var moviesAdapter: MoviesAdapter = MoviesAdapter(msg,context)
             val linearLayoutManager = LinearLayoutManager(context)
-            recyclerView?.apply {
+           /* recyclerView?.apply {
                 layoutManager = linearLayoutManager
                 itemAnimator = DefaultItemAnimator()
                 adapter = moviesAdapter
-            }
+            }*/
             recyclerView.layoutManager = linearLayoutManager
             recyclerView.itemAnimator = DefaultItemAnimator()
             recyclerView.adapter = moviesAdapter
@@ -136,6 +136,11 @@ class musicListFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener {
 
         }
 
+        performWork("http://..."){
+            //use result
+        }
+
+
         methodOverloading(int = 12)
     }
 
@@ -146,5 +151,14 @@ class musicListFragment : Fragment(),SwipeRefreshLayout.OnRefreshListener {
     fun methodOverloading(string: String? = "temp", boolean: Boolean = true, int: Int){
 
     }
+
+
+    fun performWork(param1: String, myCallback: (result: String?) -> Unit) {
+        // perform some network work
+
+        // on network finished
+        myCallback.invoke("result from network")
+    }
+
 
 }
